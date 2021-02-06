@@ -29,6 +29,9 @@ class SentenceRE(nn.Module):
     def forward(self, token_ids, token_type_ids, attention_mask, e1_mask, e2_mask):
         sequence_output, pooled_output = self.bert_model(input_ids=token_ids, token_type_ids=token_type_ids, attention_mask=attention_mask, return_dict=False)
 
+        
+        
+        hjh
         # 每个实体的所有token向量的平均值
         e1_h = self.entity_average(sequence_output, e1_mask)
         e2_h = self.entity_average(sequence_output, e2_mask)
